@@ -1,0 +1,21 @@
+-- Table: public.componentjson
+
+-- DROP TABLE public.componentjson;
+
+CREATE TABLE public.componentjson
+(
+    id integer NOT NULL DEFAULT nextval('componentjson_id_seq'::regclass),
+    componentname character varying(30) COLLATE pg_catalog."default",
+    jsondata text COLLATE pg_catalog."default",
+    jsonblob jsonb,
+    jsontimestsmp timestamp without time zone,
+    username character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT componentjson_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.componentjson
+    OWNER to postgres;
